@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_65sdp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/news_feed_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="13"
+        tools:listitem="@layout/news_feed_item_row" />
+
+</LinearLayout>

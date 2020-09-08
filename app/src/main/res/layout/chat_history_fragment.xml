@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/_25sdp"
+    android:layout_marginBottom="@dimen/_65sdp"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.fragments.chatHistory.ChatHistoryFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:padding="@dimen/_3sdp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="3.9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_3sdp"
+            android:layout_margin="@dimen/_3sdp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:drawableEnd="@drawable/search_icon"
+                android:gravity="center_vertical"
+                android:hint="Search"
+                android:padding="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:textSize="@dimen/_11ssp" />
+        </androidx.cardview.widget.CardView>
+
+
+            <ImageView
+                android:id="@+id/phoneBookBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/colored_border"
+                android:layout_gravity="center"
+                android:src="@drawable/agenda"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chat history"
+        android:textSize="@dimen/_11ssp"
+        android:textColor="#878787"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:fontFamily="@font/ubuntu_regular"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_history_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        tools:itemCount="13"
+        tools:listitem="@layout/chat_history_item_row" />
+
+
+</LinearLayout>

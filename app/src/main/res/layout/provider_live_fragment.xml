@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:layout_marginTop="@dimen/_25sdp"
+    android:layout_marginBottom="@dimen/_65sdp"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:text="@string/MyBookings"
+        android:textColor="#444544"
+        android:textSize="@dimen/_22ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/colored_border"
+        android:layout_margin="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/chat_p_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cris adams"
+                android:textSize="@dimen/_20ssp"
+                android:textColor="@color/darkGray"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntu_regular"/>
+        </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:gravity="center"
+                android:text="FIX A KITCHEN BOILER AND REPLACE A WORKTOP."
+                android:textSize="@dimen/_16ssp"
+                android:textColor="@color/darkGray"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/ubuntu_regular"/>
+
+
+        <Button
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:text="Job Completed"
+            android:textSize="@dimen/_17ssp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/accept_btn_background"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="Leave Feedback"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/ubuntu_light"
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textColorHint="@color/gray"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/messageET"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/gray"
+                android:focusable="true"
+                android:gravity="top"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="4"
+            android:theme="@style/RatingBar"
+            android:layout_gravity="center"
+            />
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

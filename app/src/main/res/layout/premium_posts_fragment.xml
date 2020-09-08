@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/_25sdp"
+    android:layout_marginBottom="@dimen/_65sdp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/premiumPosts"
+        android:textColor="#444544"
+        android:textSize="@dimen/_20ssp"
+        android:gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/premium_posts_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_20sdp"
+        tools:itemCount="13"
+        tools:listitem="@layout/premium_post_item_row" />
+
+</LinearLayout>

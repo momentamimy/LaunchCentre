@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_alignParentEnd="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_1sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:layout_marginBottom="@dimen/_20sdp"
+    app:cardCornerRadius="@dimen/_6sdp"
+    android:elevation="@dimen/_15sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_123sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ProductsOfSubSubCategory_product_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/handy_man"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha=".74"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/ProductsOfSubSubCategory_product_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/filmNameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="Handy Man"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/_18ssp" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/chat_p_img"
+            android:layout_marginStart="@dimen/_10sdp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:text="I can make it for 11am. Is that ok for you?"
+                android:fontFamily="@font/ubuntu_regular"
+                />
+
+        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:text="3 min"
+            android:textSize="@dimen/_9sdp"
+            android:textColor="#9C9C9C" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_weight="1.9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Great lets go ahead what time is good for you? Perfect see you soon."
+                    android:fontFamily="@font/ubuntu_regular"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/user_profile_pic"
+                android:layout_marginStart="@dimen/_10sdp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:text="7 min"
+            android:textSize="@dimen/_9sdp"
+            android:textColor="#9C9C9C" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:layout_marginTop="@dimen/_25sdp"
+    android:layout_marginBottom="@dimen/_65sdp"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.explore.ExploreFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/search_icon"
+            android:gravity="center_vertical"
+            android:hint="Search"
+            android:padding="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:textSize="@dimen/_11ssp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

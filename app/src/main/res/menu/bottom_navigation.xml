@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:id="@+id/navigation_home"
+    android:icon="@drawable/home_icon"
+    android:title="" />
+
+    <item
+        android:id="@+id/navigation_explore"
+        android:icon="@drawable/explore_icon"
+        android:title="" />
+    <item
+        android:id="@+id/navigation_my_booking"
+        android:icon="@drawable/my_booking_icon"
+        android:title="" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settings_icon2"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profile_icon"
+        android:title="" />
+
+
+
+</menu>

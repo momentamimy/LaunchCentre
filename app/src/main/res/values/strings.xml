@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Launch Center</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Login or Sign up-->
+    <string name="Login">Login</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="forgotPassword">Forgot Password</string>
+    <string name="contactUs">Contact Us</string>
+
+    <!-- Login -->
+    <string name="loginForgotPass">Forgot Password?</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="agreeTerms">By continuing you agree to our</string>
+    <string name="termsConditions">Terms and conditions</string>
+    <string name="enterUsername">Enter your Username</string>
+    <string name="enterpassword">Enter your Password</string>
+
+    <!-- SignUp -->
+    <string name="CreateYourAccount">Create your own account</string>
+    <string name="alreadyMember">Already a member?</string>
+    <string name="SignIn">Sign In</string>
+    <string name="Name">Name</string>
+    <string name="Email">Email</string>
+    <string name="Phone">Phone</string>
+    <string name="enterEmail">Enter your Email</string>
+    <string name="enterPhone">Enter your Phone</string>
+    <string name="emailNotValid">Email Not Valid</string>
+    <string name="passwordTooShort">Password too short</string>
+
+    <!-- Forgot Password -->
+    <string name="oldPass">Old password</string>
+    <string name="newPass">New password</string>
+    <string name="update">Update</string>
+
+    <!-- Contact Us -->
+    <string name="Message">Your Message</string>
+    <string name="Send">Send</string>
+    <string name="enterMessage">Write your message</string>
+
+    <!-- Side Menu-->
+    <string name="LaunchPremium">Launch Premium</string>
+    <string name="premiumPosts">Premium posts</string>
+    <string name="Payments">Payments</string>
+    <string name="Report">Report a Member</string>
+    <string name="Help">Help</string>
+    <string name="SignOut">Sign Out</string>
+
+
+
+    <!-- service providers -->
+    <string name="ViewOurMembers">View our members and arrange a booking</string>
+    <string name="SearchInYourCity">Search in your city</string>
+
+    <!-- my booking-->
+    <string name="MyBookings">My Bookings</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="Account">Account</string>
+    <string name="Notifications">Notifications</string>
+    <string name="Preview">Preview</string>
+    <string name="PrivacySecurity">Privacy and Security</string>
+    <string name="About">About</string>
+
+    <!-- profile -->
+    <string name="MyProfile">My Profile</string>
+    <string name="name">Name:</string>
+    <string name="number">Number:</string>
+    <string name="mail">Mail:</string>
+    <string name="description">Description:</string>
+
+
+    <!-- Help-->
+    <string name="NeedSomeHelp">Need some help ?</string>
+    <string name="getBack">We aim to get back to you within 24 hours.</string>
+
+    <!--Report-->
+    <string name="RateUs">Rate us</string>
+    <string name="GiveFeedback">Give feedback</string>
+    <string name="ReportProblem">Report a problem</string>
+    <string name="memberID">Member ID:</string>
+    <string name="CompanyName">Company Name:</string>
+
+
+    <!--Payments-->
+    <string name="OutGoingPayments">OUTGOING PAYMENTS</string>
+    <string name="CardDetails">Card details</string>
+    <string name="CardNumber">Card Number:</string>
+    <string name="ExpiryDate">Expiry date:</string>
+    <string name="CVV">CVV:</string>
+    <string name="save">Save</string>
+
+
+    <string name="PremiumPosts">Premium Posts</string>
+
+
+    <!-- Launch premium-->
+    <string name="startService">Start Service</string>
+    <string name="launchPremimDescription">SELECT YOUR SERVICE AND RECEIVE QUOTES WITHIN 60 SECONDS FROM MEMBERS READY TO ASSIST RIGHT AWAY.</string>
+    <string name="launchPremimDescription2">YOU CHOOSE THE RIGHT PRICE FOR YOU.</string>
+
+    <!-- Start premium -->
+    <string name="post">Post</string>
+    <string name="ContactNumber">Contact Number:</string>
+    <string name="Date">Date:</string>
+    <string name="PostCode">Post Code</string>
+    <string name="Whatneedsfixed">What needs to be fixed ?</string>
+    <string name="Time">Time:</string>
+    <string name="To">To</string>
+
+    <!--news feed -->
+    <string name="Follow">Follow</string>
+
+
+
+    <!-- Security & Privacy-->
+
+    <string name="CameraAccess">Camera Access</string>
+    <string name="MapsAccess">Maps Access</string>
+    <string name="BlockCookies">Block Cookies</string>
+
+    <!-- about -->
+    <string name="aboutText">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lsadipscing elitr</string>
+
+
+    <!-- preview-->
+    <string name="Language">Language</string>
+    <string name="FontSize">Font Size</string>
+    <string name="EN">EN</string>
+    <string name="Medium">Medium</string>
+
+
+    <!-- Notification-->
+    <string name="MuteNotifications">Mute notifications</string>
+    <string name="NotificationsTone">Notifications tone</string>
+    <string name="Vibrate">Vibrate</string>
+
+
+    <!--Account settings -->
+    <string name="DeleteAccount">Delete my account</string>
+
+
+    <!--Book Provider -->
+
+    <string name="Address">Address:</string>
+    <string name="SendRequest">Send Request</string>
+
+</resources>
