@@ -24,18 +24,16 @@ public interface DataService {
     @POST("Account/BusinessAccount?api")
     Observable<AccountResponse> signUpBusinessAccount(@Body SignUpBusinessBody signUpBody);
 
-    @Headers({"Accept-Type: application/json",
+    @Headers({"Accept: application/json",
             "Content-Type: application/json",
     })
     @POST("account/Login?api")
     Observable<AccountResponse> Login(@Body LoginBody loginBody);
 
-    @Headers({"Accept-Type: application/json",
-            "Content-Type: application/json",
-    })
+   
     @FormUrlEncoded
     @POST("account/Login?api")
-    Observable<AccountResponse> Login(@Field("Email") String Email,
-                                      @Field("Password") String Password);
+    Observable<AccountResponse> Login(@Field(value = "Email") String Email,
+                                      @Field(value = "Password") String Password);
 
 }

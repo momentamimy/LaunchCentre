@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
 
     private static Retrofit retrofit = null;
-    private static String BASE_URL = "http://154.183.162.148/";
+    private static String BASE_URL = "http://154.179.12.61/";
 
     public static DataService getService() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

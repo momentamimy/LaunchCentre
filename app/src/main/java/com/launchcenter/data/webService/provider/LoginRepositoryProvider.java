@@ -8,9 +8,8 @@ import com.launchcenter.data.webService.body.LoginBody;
 import io.reactivex.Observable;
 
 public class LoginRepositoryProvider {
-
     public Observable<AccountResponse> Login(LoginBody loginBody){
         DataService dataService = RetrofitInstance.getService();
-        return dataService.Login(loginBody);
+        return dataService.Login(loginBody.Email,loginBody.Password);
     }
 }
