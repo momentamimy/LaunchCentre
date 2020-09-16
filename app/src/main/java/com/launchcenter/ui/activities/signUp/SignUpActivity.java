@@ -15,7 +15,6 @@ import com.launchcenter.R;
 import com.launchcenter.databinding.ActivitySignUpBinding;
 import com.launchcenter.models.User;
 import com.launchcenter.ui.activities.login.LoginActivity;
-import com.launchcenter.ui.activities.login.LoginViewModel;
 import com.launchcenter.ui.activities.main.MainActivity;
 
 import java.util.Objects;
