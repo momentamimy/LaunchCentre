@@ -1,6 +1,5 @@
 package com.launchcenter.ui.activities.login;
 
-import android.util.Log;
 import android.view.View;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -12,7 +11,7 @@ import com.launchcenter.repository.RepositoryLogin;
 public class LoginViewModel extends ViewModel {
     private RepositoryLogin repositoryLogin= new RepositoryLogin();
 
-    public MutableLiveData<String> UserName = new MutableLiveData<>();
+    public MutableLiveData<String> Email = new MutableLiveData<>();
     public MutableLiveData<String> Password = new MutableLiveData<>();
     private MutableLiveData<User> userMutableLiveData;
 
@@ -30,7 +29,7 @@ public class LoginViewModel extends ViewModel {
     public void onLoginBtnClick(View view) {
 
         User user= new User();
-        user.setUsername(UserName.getValue());
+        user.setEmail(Email.getValue());
         user.setPassword(Password.getValue());
 
         userMutableLiveData.setValue(user);
@@ -38,7 +37,7 @@ public class LoginViewModel extends ViewModel {
 
     }
 
-    public MutableLiveData<AccountResponse.Value> LoginUser(User user){
-        return repositoryLogin.login(user);
+    public MutableLiveData<AccountResponse.Value> LoginUser(){
+        return repositoryLogin.login(getUser().getValue());
     }
 }

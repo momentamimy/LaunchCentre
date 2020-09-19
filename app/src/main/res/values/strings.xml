@@ -13,22 +13,32 @@
     <string name="loginForgotPass">Forgot Password?</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
     <string name="agreeTerms">By continuing you agree to our</string>
     <string name="termsConditions">Terms and conditions</string>
     <string name="enterUsername">Enter your Username</string>
     <string name="enterpassword">Enter your Password</string>
+    <string name="login_progress">Login ...</string>
 
     <!-- SignUp -->
     <string name="CreateYourAccount">Create your own account</string>
-    <string name="alreadyMember">Already a member?</string>
+    <string name="business_account">business account?</string>
+    <string name="client_account">Client account?</string>
     <string name="SignIn">Sign In</string>
+    <string name="alreadyMember">Already a member?</string>
+    <string name="create_account">create account</string>
     <string name="Name">Name</string>
     <string name="Email">Email</string>
     <string name="Phone">Phone</string>
     <string name="enterEmail">Enter your Email</string>
     <string name="enterPhone">Enter your Phone</string>
+    <string name="enterCity">Enter your City</string>
     <string name="emailNotValid">Email Not Valid</string>
     <string name="passwordTooShort">Password too short</string>
+    <string name="ConfirmPasswordNotEqual">Confirm password is different from password</string>
+    <string name="AccountCreatedSuccessfully">Account created successfully, check your mail for confirmation</string>
+    <string name="Sign_up_progress">Signing up ...</string>
+    <string name="company_name">Company Name</string>
 
     <!-- Forgot Password -->
     <string name="oldPass">Old password</string>
@@ -147,5 +157,7 @@
 
     <string name="Address">Address:</string>
     <string name="SendRequest">Send Request</string>
+    <string name="upload">Upload</string>
+    <string name="upload_company_documentation">Upload Company Documentation</string>
 
 </resources>

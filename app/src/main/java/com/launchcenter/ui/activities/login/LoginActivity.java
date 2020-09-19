@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding loginBinding;
 
+    private ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,19 +45,22 @@ public class LoginActivity extends AppCompatActivity {
             public void onChanged(User user) {
 
 
-                if (TextUtils.isEmpty(Objects.requireNonNull(user).getUsername())) {
-                    loginBinding.usernameET.setError(getResources().getString(R.string.enterUsername));
+                if (TextUtils.isEmpty(Objects.requireNonNull(user).getEmail())) {
+                    loginBinding.usernameET.setError(getResources().getString(R.string.enterEmail));
                     loginBinding.usernameET.requestFocus();
                 } else if (TextUtils.isEmpty(Objects.requireNonNull(user).getPassword())) {
                     loginBinding.passwordET.setError(getResources().getString(R.string.enterpassword));
                     loginBinding.passwordET.requestFocus();
                 } else {
-                    loginViewModel.LoginUser(user).observe(LoginActivity.this, new Observer<AccountResponse.Value>() {
+                    showProgressDialog(getResources().getString(R.string.login_progress));
+                    loginViewModel.LoginUser().observe(LoginActivity.this, new Observer<AccountResponse.Value>() {
                         @Override
                         public void onChanged(AccountResponse.Value value) {
                             if (value.getSucess().equals("sucess")) {
+                                hideProgressDialog();
                                 openMainActivity();
                             } else {
+                                hideProgressDialog();
                                 Toast.makeText(getApplicationContext(),value.getSucess(),Toast.LENGTH_LONG).show();
                             }
                         }
@@ -99,5 +105,15 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void showProgressDialog(String message) {
+        dialog = new ProgressDialog(this);
+        dialog.setMessage(message);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    public void hideProgressDialog() {
+        dialog.dismiss();
+    }
 
 }

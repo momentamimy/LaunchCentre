@@ -6,8 +6,10 @@ public class User {
 
     private String Username;
     private String Phone;
+    private String City;
     private String Email;
     private String Password;
+    private String ConfirmPassword;
 
     public String getUsername() {
         return Username;
@@ -41,11 +43,31 @@ public class User {
         Email = email;
     }
 
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public String getConfirmPassword() {
+        return ConfirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        ConfirmPassword = confirmPassword;
+    }
+
     public boolean isEmailValid() {
         return Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches();
     }
 
     public boolean isPasswordLengthGreaterThan6() {
         return getPassword().length() > 6;
+    }
+
+    public boolean isPasswordEqualConfirm() {
+        return getPassword().equals(getConfirmPassword());
     }
 }
