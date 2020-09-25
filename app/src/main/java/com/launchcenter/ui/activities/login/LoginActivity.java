@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onChanged(AccountResponse.Value value) {
                             if (value.getSucess().equals("sucess")) {
                                 hideProgressDialog();
+                                loginViewModel.saveLoginData(value);
                                 openMainActivity();
                             } else {
                                 hideProgressDialog();

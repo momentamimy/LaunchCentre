@@ -6,20 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.launchcenter.R;
-import com.launchcenter.ui.fragments.bookProvider.BookProviderFragment;
+import com.launchcenter.models.ServiceModel;
 import com.launchcenter.ui.fragments.providerDetails.ProviderDetailsFragment;
+import com.launchcenter.ui.fragments.subscribedCompanies.SubscribedCompaniesFragment;
+import com.launchcenter.utilities.Constant;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ServiceProvidersAdapter extends RecyclerView.Adapter<ServiceProvidersAdapter.ViewHolder>
 {
-    // private List<DataItem> ItemList;
+    private List<ServiceModel> itemList=new ArrayList<>();
     private Context cnx;
 
     public ServiceProvidersAdapter(Context cnx)
@@ -29,14 +36,14 @@ public class ServiceProvidersAdapter extends RecyclerView.Adapter<ServiceProvide
 
     public void updateList(List mList)
     {
-        //  this.ItemList = mList;
+        this.itemList = mList;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount()
     {
-        return 10;
+        return itemList.size();
     }
 
 
@@ -52,14 +59,15 @@ public class ServiceProvidersAdapter extends RecyclerView.Adapter<ServiceProvide
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int listPosition)
     {
-
-
+        ServiceModel item=itemList.get(listPosition);
+        holder.SubServiceName.setText(item.getName());
+        Picasso.with(cnx).load(Constant.IMAGE_BASE_URL+item.getLogo()).into(holder.SubServiceCircleImage);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               ProviderDetailsFragment providerDetailsFragment= new ProviderDetailsFragment();
-                ((FragmentActivity)cnx).getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, providerDetailsFragment,"ProviderDetailsFragment").addToBackStack(null).commit();
+               SubscribedCompaniesFragment subscribedCompaniesFragment= SubscribedCompaniesFragment.newInstance(item.getId());
+                ((FragmentActivity)cnx).getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, subscribedCompaniesFragment,"SubscribedCompaniesFragment").addToBackStack(null).commit();
             }
         });
 
@@ -67,12 +75,14 @@ public class ServiceProvidersAdapter extends RecyclerView.Adapter<ServiceProvide
 
     class ViewHolder extends RecyclerView.ViewHolder
     {
-        ImageView status_icon;
+        TextView SubServiceName;
+        CircleImageView SubServiceCircleImage;
 
         ViewHolder(View itemView)
         {
             super(itemView);
-            status_icon=itemView.findViewById(R.id.status_icon);
+            SubServiceName=itemView.findViewById(R.id.SubServiceTV);
+            SubServiceCircleImage=itemView.findViewById(R.id.SubServiceImageView);
         }
 
     }

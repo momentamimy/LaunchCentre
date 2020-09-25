@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import com.launchcenter.data.webService.AccountResponse;
 import com.launchcenter.models.User;
 import com.launchcenter.repository.RepositoryLogin;
+import com.launchcenter.service.LoginSharedPreference;
 
 public class LoginViewModel extends ViewModel {
     private RepositoryLogin repositoryLogin= new RepositoryLogin();
@@ -39,5 +40,9 @@ public class LoginViewModel extends ViewModel {
 
     public MutableLiveData<AccountResponse.Value> LoginUser(){
         return repositoryLogin.login(getUser().getValue());
+    }
+
+    public void saveLoginData(AccountResponse.Value value) {
+        LoginSharedPreference.saveLoginValue(value);
     }
 }

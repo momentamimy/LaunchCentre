@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.subscribedCompanies.SubscribedCompaniesFragment">
+
+   <androidx.recyclerview.widget.RecyclerView
+       tools:listitem="@layout/subscribed_companies_item_row"
+       android:id="@+id/Companies_Rcycler"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+</FrameLayout>

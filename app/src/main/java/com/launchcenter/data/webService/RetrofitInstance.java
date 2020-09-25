@@ -1,5 +1,7 @@
 package com.launchcenter.data.webService;
 
+import com.launchcenter.utilities.Constant;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -14,9 +16,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
 
     private static Retrofit retrofit = null;
-    private static String BASE_URL = "http://197.54.137.31/";
+    private static String BASE_URL = Constant.BASE_URL;
 
-    public static DataService getService() {
+    public static RegisterDataService getService() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -41,8 +43,34 @@ public class RetrofitInstance {
 
 
 
-        return retrofit.create(DataService.class);
+        return retrofit.create(RegisterDataService.class);
     }
 
+    public static ServicesDataService getServicesData() {
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
+        OkHttpClient okHttpClient = new OkHttpClient().newBuilder()
+                .addInterceptor(interceptor)
+                .connectTimeout(120, TimeUnit.SECONDS)
+                .readTimeout(120, TimeUnit.SECONDS)
+                .writeTimeout(120, TimeUnit.SECONDS)
+                .build();
+
+
+        if (retrofit == null) {
+
+            retrofit = new Retrofit
+                    .Builder()
+                    .baseUrl(BASE_URL)
+                    .client(okHttpClient)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+
+
+        return retrofit.create(ServicesDataService.class);
+    }
 }

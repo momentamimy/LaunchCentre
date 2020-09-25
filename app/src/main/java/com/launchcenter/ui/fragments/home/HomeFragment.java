@@ -1,5 +1,6 @@
 package com.launchcenter.ui.fragments.home;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -15,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.launchcenter.R;
+import com.launchcenter.models.ServiceModel;
 import com.launchcenter.utilities.Constant;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -53,7 +57,9 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-        // TODO: Use the ViewModel
+        mViewModel.getAllServices().observe(getActivity(), serviceModels -> {
+            homeServicesAdapter.updateList(serviceModels);
+        });
     }
 
 }

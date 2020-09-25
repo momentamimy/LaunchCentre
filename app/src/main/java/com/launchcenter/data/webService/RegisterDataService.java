@@ -18,7 +18,7 @@ import retrofit2.http.Part;
 /**
  * Created by K. A. ANUSHKA MADUSANKA on 7/4/2018.
  */
-public interface DataService {
+public interface RegisterDataService {
 
     @FormUrlEncoded
     @POST("Account/ClientAccount?api")

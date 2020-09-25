@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,9 +14,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.launchcenter.R;
+import com.launchcenter.models.ServiceModel;
 import com.launchcenter.ui.fragments.addService.AddServiceFragment;
+import com.launchcenter.ui.fragments.home.HomeViewModel;
+import com.launchcenter.utilities.Constant;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 public class ServiceProvidersFragment extends Fragment {
 
@@ -23,6 +32,19 @@ public class ServiceProvidersFragment extends Fragment {
     ServiceProvidersAdapter serviceProvidersAdapter;
 
     ImageView add_service_btn;
+
+    ImageView Service_Img;
+    TextView Service_Txtv;
+
+    private ServiceModel serviceModel= null;
+
+    public ServiceModel getServiceModel() {
+        return serviceModel;
+    }
+
+    public void setServiceModel(ServiceModel serviceModel) {
+        this.serviceModel = serviceModel;
+    }
 
     public static ServiceProvidersFragment newInstance() {
         return new ServiceProvidersFragment();
@@ -39,6 +61,15 @@ public class ServiceProvidersFragment extends Fragment {
         getActivity().findViewById(R.id.navigation_bottom_frame).setVisibility(View.VISIBLE);
 
         getActivity().findViewById(R.id.newsFeedBtn).setVisibility(View.GONE);
+
+        Service_Txtv = view.findViewById(R.id.filmNameTV);
+        Service_Img =view.findViewById(R.id.appCompatImageView);
+        if (serviceModel!=null)
+        {
+            Service_Txtv.setText(serviceModel.getName());
+            Picasso.with(getContext()).load(Constant.IMAGE_BASE_URL+serviceModel.getLogo()).into(Service_Img);
+        }
+
         service_providers_rv=view.findViewById(R.id.service_providers_rv);
         serviceProvidersAdapter =new ServiceProvidersAdapter(getActivity());
         service_providers_rv.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
@@ -64,6 +95,13 @@ public class ServiceProvidersFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mViewModel = ViewModelProviders.of(this).get(ServiceProvidersViewModel.class);
+        mViewModel.getSubServices(serviceModel.getId()).observe(getActivity(), new Observer<List<ServiceModel>>() {
+            @Override
+            public void onChanged(List<ServiceModel> serviceModels) {
+                serviceProvidersAdapter.updateList(serviceModels);
+            }
+        });
     }
 
 }

@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imageView"
+                android:id="@+id/SubServiceImageView"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:background="@drawable/circle_border_img"

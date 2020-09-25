@@ -159,5 +159,7 @@
     <string name="SendRequest">Send Request</string>
     <string name="upload">Upload</string>
     <string name="upload_company_documentation">Upload Company Documentation</string>
+    <string name="price">price</string>
+    <string name="book">book</string>
 
 </resources>
