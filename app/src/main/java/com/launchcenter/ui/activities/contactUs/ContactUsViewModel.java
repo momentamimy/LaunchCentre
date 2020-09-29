@@ -5,10 +5,14 @@ import android.view.View;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.launchcenter.data.webService.AccountResponse;
 import com.launchcenter.models.ContactUsModel;
 import com.launchcenter.models.ForgotPassModel;
+import com.launchcenter.repository.RepositoryLogin;
 
 public class ContactUsViewModel extends ViewModel {
+
+    private RepositoryLogin repositoryLogin= new RepositoryLogin();
 
     public MutableLiveData<String> Name = new MutableLiveData<>();
     public MutableLiveData<String> Email = new MutableLiveData<>();
@@ -35,7 +39,8 @@ public class ContactUsViewModel extends ViewModel {
         contactUsModelMutableLiveData.setValue(contactUsModel);
     }
 
-    public void contactUs() {
+    public MutableLiveData<AccountResponse.Value> contactUs() {
+        return repositoryLogin.contactUs(contactUsModelMutableLiveData.getValue());
     }
 
 }

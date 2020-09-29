@@ -37,6 +37,7 @@
     <string name="passwordTooShort">Password too short</string>
     <string name="ConfirmPasswordNotEqual">Confirm password is different from password</string>
     <string name="AccountCreatedSuccessfully">Account created successfully, check your mail for confirmation</string>
+    <string name="PleaseCheckYourMail">please check your mail... </string>
     <string name="Sign_up_progress">Signing up ...</string>
     <string name="company_name">Company Name</string>
 

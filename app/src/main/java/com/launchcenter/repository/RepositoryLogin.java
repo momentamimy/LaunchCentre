@@ -8,6 +8,7 @@ import com.launchcenter.data.webService.AccountResponse;
 import com.launchcenter.data.webService.body.LoginBody;
 import com.launchcenter.data.webService.body.SignUpClientBody;
 import com.launchcenter.data.webService.provider.LoginRepositoryProvider;
+import com.launchcenter.models.ContactUsModel;
 import com.launchcenter.models.User;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -20,6 +21,7 @@ public class RepositoryLogin {
     MutableLiveData<AccountResponse.Value> valueLoginMutableLiveData = new MutableLiveData<>();
     MutableLiveData<AccountResponse.Value> valueSignUpMutableLiveData = new MutableLiveData<>();
     MutableLiveData<AccountResponse.Value> valueSignUpBusinessMutableLiveData = new MutableLiveData<>();
+    MutableLiveData<AccountResponse.Value> valueContactUsMutableLiveData = new MutableLiveData<>();
 
     private CompositeDisposable compositeDisposable=new CompositeDisposable();
 
@@ -92,5 +94,27 @@ public class RepositoryLogin {
                     }
                 }));
         return valueSignUpBusinessMutableLiveData;
+    }
+
+    public MutableLiveData<AccountResponse.Value> contactUs(ContactUsModel contactUsModel) {
+        compositeDisposable.add(repositoryProvider.contactUs(contactUsModel).
+                subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribeWith(new DisposableObserver<AccountResponse>() {
+                    @Override
+                    public void onNext(AccountResponse accountResponse) {
+                        valueContactUsMutableLiveData.postValue(accountResponse.getValue());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                }));
+        return valueContactUsMutableLiveData;
     }
 }

@@ -48,4 +48,9 @@ public interface RegisterDataService {
     Observable<AccountResponse> Login(@Field(value = "Email") String Email,
                                       @Field(value = "Password") String Password);
 
+    @FormUrlEncoded
+    @POST("Home/ContactUs?api")
+    Observable<AccountResponse> ContactUs(@Field(value = "Name") String Name,
+                                          @Field(value = "Email") String Email,
+                                          @Field(value = "Notes") String Notes);
 }
